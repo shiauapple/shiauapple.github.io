@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADGklEQVRYR9WXz08TQRTH3+uWLiCVHxFivHkwJCoUsJBgJbYai0EwJurVP8AETprUBKGokUY9YeJFT168ED1AjGCiRCgELJQf0cR48CAa+VVDitBC2zEzydSd0u1uC9W4yR5m573v++ybN29nEdK4ukffVwPBWwjQnMyNAPQDko4bx2v9emVRj6HH63sFAI16bBU2Ay6b9ayWT0oAj9fXAwCtWiIa8w9dNmubmo0qgMfr2wSAnB0G5+5bLpvVlExrG0DPy8/yeuFqaJcCCzL5q4W5bU2HwsqH2wA8Xh/JRnCu6bJZhZjCYJfTrvYewnLEAWjBhdc3Wj8OD2czAXC4oQHk/Lx4YSoBiH9gEOidzavylAOszeeALwUD4PucBj86NwZXDpizwvD0exCmy2ugtqWF6rM+wQFY4f0tgCqnE3JkmWUBaXtFglPpApS0P4DAnWtpZYpnoMJhh9wCMxAkNdjt9fXx3p5OBvbde8yCB589gbB/XBeIEsCUlw8oSf2o3PeZANDIsdAGBDpUu20cTglAH9Is/P8AmS4BzYDBaMw8AzstQr4uGS+BrqpLMEqsATr97wESt2F0dAgsZjmTF9T0mQmGgVjrgfYBdhkMs0IjIvNfgXyb1xTaiUG0tAyiZWVMIkfObRJasaXIDJbi7HwHOPTkwjJMLq6wobvRgcLHKF0Ao9HIhCKRiO6k/AHAWXej3SJ8jiuLCqCqeK9usUwMfQvLMLW4wt6e7QIuwk/AobWgLt3rJ+oEu/sjE7r8mBFir9tpvywA0AE9koXWgpon4YPFhXDpSLkQsPfDJ/jyc1UTAhFIp9NhiDeiRI+778bJ5sZ6SqGrddWwxyRy/trcgkcT2j9EPPWqAPRYHpDmVY/lsiRBW/2xpIA9Y5MQjkbV4U1gdjsca0oD1R+TzoG3MVTUCHWqKC2B+v2lKbMz9mMJ5pYCgg1BJF1OezztugDYPn099AJi5ILmwqYyMBieu8+cvKhmouvn1D045AdCqtIBQcTpTqe9WstHFwAXuf1m5HwsGukiseQwiDgjSdLN9tMNfVqB+fxvpOlwfIC8+YIAAAAASUVORK5CYII=" type="image/x-icon" />
+    
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/menu.css"></li>
+    <meta charset="utf-8">
+    <title> 進擊的動漫</title>
+  </head>
+  <body bgcolor="#dddddd">
+  
+    <div class="col-md-12">
+      <div class="container">
+        <div class="row">
+          <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+              <div class="col-md-12"><center>
+              <img align="left" src="data:image/png;base64,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">
+                <ul class="nav navbar-nav navbar-right">
+
+                <font size="1">2017® 萬能蕭培</font>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      Home <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="https://www.youtube.com/user/animeponycanyon">
+                        木棉花 關方頻道</a></li>
+                        <li><a href="http://www.e-muse.com.tw/property/titan/introduction.html">故事大綱</a></li>
+                        <li><a href="http://www.e-muse.com.tw/property/titan/index.html">官方網站</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="https://line.me/R/ti/p/%40pzn9299d"><img height="36" border="0"  >聯絡我們</a></li>
+                      </ul>
+                    </li>
+                    
+                  </ul>
+                  </center>
+                </div>
+              </div>
+            </nav>
+            
+            <div class="col-md-12"><!-- Large modal -->
+           <input type="button" onclick="location.href='shiauapple.gitnub.io/'" style="background-image:url(http://www.i-comic.net/images2/903264CA76845DE84EBA570B8A9E7248/poster_s.jpg);width:200px;height:300px;">
+            
+                       </center>
+                      <center>
+                    </div>
+                  </div>
+                </div>
+              </div></center></div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="js/index.js"></script>
+      </body>
+    </html>
