@@ -16,14 +16,19 @@ var studentCollection = db.collection('students');
 
 studentCollection.load()
 
+function createHTMLString(_id, name){
+   return "<tr><td class='studentsId'>"+_id+"</td><td>"+name+"</td><td><button class='deleteButton btn btn-danger' data-id='"+_id+"''>刪除</button></td></tr>";
+
+}
+
 function afterLoad() {
     var students = studentCollection.find();
     console.log(students)
     for (var i = 0; i < students.length; i++) {
     	console.log(students[i]._id);
-    	$("#studentsTable").append("<tr><td class='studentsId'>"+students[i]._id+"</td><td>"+students[i].name+"</td></tr>");
+    	$("#studentsTable").append(createHTMLString(students[i]._id,students[i].name));
     }
-    $(".studentsId").click(function(){
+    $("#studentsTable").on("click",".studentsId",function(){
     	var studentId = $(this).text();
     	console.log(studentId)
 
@@ -44,7 +49,7 @@ setTimeout(afterLoad, 500);
 
 function addData() {
 	var name = $("#newName").val();
-	var age = $("#age").val() ;
+	var age = $("#newAge").val() ;
 	var newStudent = {
     name: name,
     age: age
@@ -54,6 +59,21 @@ studentCollection.save();
 var student = studentCollection.find(newStudent)[0];
 console.log(student);
 
-$("#studentsTable").append("<tr><td class='studentsId'>"+student._id+"</td><td>"+student.name+"</td></tr>");
+$("#studentsTable").append(createHTMLString(student._id,student.name));
 }
 $("#addData").click(addData) 
+
+
+
+function deleteData(){
+    var id=$(this).attr("data-id")
+    console.log(id)
+
+    studentCollection.remove({
+        _id: id
+    });
+    studentCollection.save()
+
+    $(this).parents("tr").remove()
+}
+$("#studentsTable").on("click",".deleteButton",deleteData)

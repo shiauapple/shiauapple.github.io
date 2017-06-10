@@ -7,29 +7,27 @@
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/fdb-all.min.js"></script>
 		<meta charset="utf-8">
-		<title>這是DB</title>
+		<title>學生</title>
 	</head>
 	<body>
-		<h1>這是DB</h1>
+		<h1>學生</h1>
 		姓名: <input type=”text” id=newName value= >
-		年齡: <input type=”text” id=oge value= >
-		<input type="button" class="btn btn-success btn-lg"  name="button" id="addData" value="新增學生" />
+		年齡: <input type=”text” id=newAge value= >
+		
 
 		<table class="table">
+		<input type="button" class="btn btn-success btn-lg"  name="button" id="addData" value="新增學生" />
 			<thead>
 				<tr>
 					<td>id</td>
 					<td>姓名</td>
+					<td>操作</td>
 				</tr>
 			</thead>
 			<tbody id="studentsTable">
 				<tr>
-					<td>1</td>
-					<td>Orange</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Apple</td>
+					
+
 				</tr>
 			</tbody>
 		</table>
@@ -43,6 +41,7 @@
 					<div class="modal-body">
 						<p>ID: <span id="studentsId"></span></p>
 						<p>年齡： <span id="studentsAge"></span></p>
+
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
