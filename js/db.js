@@ -64,7 +64,28 @@ function addData() {
 
     $("#studentsTable").append(createHTMLString(student._id, student.name));
 }
+
+function gtAge(){
+    var gtAge = $("#gtAge").val();
+    console.log(gtAge);
+
+    var result = studentCollection.find({
+    age: {
+        $gte: gtAge/1
+    }
+});
+    console.log(result);
+
+    $("#studentsTable").find("tr").remove();
+
+    for (var i = 0; i < result.length; i++) {
+        console.log(result[i]._id);
+        $("#studentsTable").append(createHTMLString(result[i]._id, result[i].name));
+    }
+}
+
 $("#addData").click(addData)
+$("#search").click(gtAge)
 
 
 

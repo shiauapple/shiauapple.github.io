@@ -13,10 +13,13 @@
 		<h1>學生</h1>
 		姓名: <input type=”text” id=newName value= >
 		年齡: <input type=”text” id=newAge value= >
-		
+		<input type="button" class="btn btn-success btn-lg"  name="button" id="addData" value="新增學生" />
+		以年齡搜尋( >= )  : <input type=”text”  id=gtAge value= >
+			 <input type="button" class="btn btn-success btn-lg"  name="button" id="search" value="搜尋" />
 		<table class="table">
-			<input type="button" class="btn btn-success btn-lg"  name="button" id="addData" value="新增學生" />
+			
 			<thead>
+			 
 				<tr>
 					<td>id</td>
 					<td>姓名</td>
@@ -29,6 +32,7 @@
 				</tr>
 			</tbody>
 		</table>
+
 		<div class="modal fade" tabindex="-1" role="dialog" id="studentsInfo">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
