@@ -13,64 +13,68 @@
 		<h1>學生</h1>
 		姓名: <input type=”text” id=newName value= >
 		年齡: <input type=”text” id=newAge value= >
+		性別: <input type=”text” id=newGender value= >
 		<input type="button" class="btn btn-success btn-lg"  name="button" id="addData" value="新增學生" />
 		以年齡搜尋( >= )  : <input type=”text”  id=gtAge value= >
-			 <input type="button" class="btn btn-success btn-lg"  name="button" id="search" value="搜尋" />
-		<table class="table">
 			
-			<thead>
-			 
-				<tr>
-					<td>id</td>
-					<td>姓名</td>
-					<td>操作</td>
-				</tr>
-			</thead>
-			<tbody id="studentsTable">
-				<tr>
+			<input id=male class="gender" type="checkbox" />  男  <input id=female class="gender" type="checkbox" />  女  
+			<input type="button" class="btn btn-success btn-lg"  name="button" id="search" value="搜尋" />  
+			<table class="table">
+				
+				<thead>
 					
-				</tr>
-			</tbody>
-		</table>
-
-		<div class="modal fade" tabindex="-1" role="dialog" id="studentsInfo">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="studentsName1">學生資料</h4>
-					</div>
-					<div class="modal-body">
-						<p>ID: <span id="studentsId"></span></p>
-						<p>姓名: <span id="studentsName"></span></p>
-						<p>年齡： <span id="studentsAge"></span></p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+					<tr>
+						<td>id</td>
+						<td>姓名</td>
+						<td>操作</td>
+					</tr>
+				</thead>
+				<tbody id="studentsTable">
+					<tr>
 						
+					</tr>
+				</tbody>
+			</table>
+			<div class="modal fade" tabindex="-1" role="dialog" id="studentsInfo">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="studentsName1">學生資料</h4>
+						</div>
+						<div class="modal-body">
+							<p>ID: <span id="studentsId"></span></p>
+							<p>姓名: <span id="studentsName"></span></p>
+							<p>年齡： <span id="studentsAge"></span></p>
+							<p>性別： <span id="studentsGender"></span></p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+							
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="modal fade" id="updateDateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">修改</h4>
-					</div>
-					<div class="modal-body">
-						姓名: <input type=”text” id=updateName value= >
-						<font color="red" size="1">*姓名修改完成後須重整</font>
-						年齡: <input type=”text” id=updateAge value= >
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
-						<button type="button" class="btn btn-primary" id="updateSave">儲存</button>
+			<div class="modal fade" id="updateDateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">修改</h4>
+						</div>
+						<div class="modal-body">
+							<p>姓名: <input type=”text” id=updateName value= >
+							<font color="red" size="1">*姓名修改完成後須重整</font></p>
+							<p>年齡: <input type=”text” id=updateAge value= ></p>
+							<p>性別: <input type=”text” id=updateGender value= ></p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+							<button type="button" class="btn btn-primary" id="updateSave">儲存</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<script type="text/javascript" src="js/db.js"></script>
-	</body>
-</html>
+			<script type="text/javascript" src="js/db.js"></script>
+		</body>
+	</html>

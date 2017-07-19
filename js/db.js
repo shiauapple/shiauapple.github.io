@@ -39,8 +39,8 @@ function afterLoad() {
         var student = studentCollection.find(query)[0];
 
         $("#studentsName").text(student.name);
-
         $("#studentsAge").text(student.age);
+        $("#studentsGender").text(student.gender);
         $("#studentsId").text(student._id);
 
         $("#studentsInfo").modal('show');
@@ -53,9 +53,11 @@ setTimeout(afterLoad, 500);
 function addData() {
     var name = $("#newName").val();
     var age = $("#newAge").val();
+    var gender = $("#newGender").val();
     var newStudent = {
         name: name,
-        age: age
+        age: age,
+        gender: gender
     };
     studentCollection.insert(newStudent);
     studentCollection.save();
@@ -68,11 +70,22 @@ function addData() {
 function gtAge(){
     var gtAge = $("#gtAge").val();
     console.log(gtAge);
+    var selectedClasse=[]
 
+    if ($("#male").prop("checked")) {
+     selectedClasse.push("男")
+}
+     if ($("#female").prop("checked")) {
+     selectedClasse.push("女")
+ }
     var result = studentCollection.find({
     age: {
         $gte: gtAge/1
+    },
+    gender:{
+        $in:selectedClasse
     }
+
 });
     console.log(result);
 
@@ -113,6 +126,7 @@ function updateDate() {
 
     $("#updateName").val(student.name);
     $("#updateAge").val(student.age);
+    $("#updateGender").val(student.gender);
      $("#updateSave").attr("data-id",studentId);
 
     $("#updateDateModal").modal('show');
@@ -125,9 +139,11 @@ function updateSave(){
     console.log(studentId)
     var name = $("#updateName").val();
     var age = $("#updateAge").val();
+    var gender = $("#updateGender").val();
     var newStudent = {
         name: name,
-        age: age
+        age: age,
+        gender: gender
     };
     studentCollection.updateById(studentId,newStudent);
     studentCollection.save();
