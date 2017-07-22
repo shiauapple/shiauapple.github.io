@@ -7,13 +7,17 @@
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/fdb-all.min.js"></script>
 		<meta charset="utf-8">
-		<title>學生</title>
+		<title>人員</title>
 	</head>
 	<body>
-		<h1>學生</h1>
+		<h1>人員</h1>
 		姓名: <input type=”text” id=newName value= >
 		年齡: <input type=”text” id=newAge value= >
 		性別: <input type=”text” id=newGender value= >
+		<select id="parent-id">
+  		<option value="">請選擇家長</option>
+  		
+		</select>
 		<input type="button" class="btn btn-success btn-lg"  name="button" id="addData" value="新增學生" />
 		以年齡搜尋( >= )  : <input type=”text”  id=gtAge value= >
 			
@@ -47,6 +51,9 @@
 							<p>姓名: <span id="studentsName"></span></p>
 							<p>年齡： <span id="studentsAge"></span></p>
 							<p>性別： <span id="studentsGender"></span></p>
+							<p>家長： <span id="studentsParent"></span></p>
+							
+
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
@@ -68,6 +75,10 @@
 							<p>年齡: <input type=”text” id=updateAge value= ></p>
 							<p>性別: <input type=”text” id=updateGender value= ></p>
 						</div>
+						<select id="updateParent-id">
+  							<option value="">請選擇家長</option>
+  		
+						</select>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
 							<button type="button" class="btn btn-primary" id="updateSave">儲存</button>
